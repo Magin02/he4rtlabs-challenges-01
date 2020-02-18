@@ -1,0 +1,186 @@
+body {
+  color: black;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+header {
+  color: white;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #8743cc;
+  margin-top: -50px;
+  height: 350px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.panels {
+  margin-top: 35px;
+}
+
+.panel {
+  padding: 12px;
+  display: inline-block;
+  font-size: smaller;
+  height: 248px;
+  width: 250px;
+  margin: 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  overflow-y: hidden;
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+}
+
+.form {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: #8743cc;
+  padding-top: 18px;
+  border: none;
+  outline: none;
+}
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #8743cc;
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #8743cc;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-label {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .input-label .content-label,
+.form input:valid + .input-label .content-label {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: white;
+}
+
+.form input:focus + .input-label::after,
+.form input:valid + .input-label::after {
+  transform: translateX(0%);
+}
+
+.button {
+  width: 200px;
+  height: 80px;
+  border-color: #8e44ad;
+  border-radius: 0;
+  color: #8e44ad;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #8e44ad;
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:after {
+  width: 110%;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animated {
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+#result {
+  color: #8743cc;
+  left: 38%;
+  position: absolute;
+  transform: translateX(-50%);
+}

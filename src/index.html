@@ -1,15 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de Freela - He4rtDevs</title>
-    <link rel="stylesheet" href="./main.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calculadora de freelance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/main.css"
+    />
+    <script src="main.js"></script>
   </head>
+
   <body>
-    <div>
-      <h1>Olá mundo.</h1>
+    <header>
+      <img src="assets/he4rt.png" />
+      <div class="title">
+        <h1>He4rt Challenges</h1>
+        <h2>Calculadora freelance</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="panels">
+        <div class="panel">
+          <img src="assets/clock.svg" class="icons" />
+          <h3>Tempo diário</h3>
+          <p>
+            Aquele tempo que você gasta diariamente no projeto é muito valioso
+            pois deixou de ser um tempo onde hava descontração e por isso vamos
+            levar em consideração.
+          </p>
+          <div class="form">
+            <input
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+              onkeypress="return onlynumber();"
+            />
+
+            <label for="name" class="input-label">
+              <span class="content-label">Horas</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <img src="assets/calendar.svg" class="icons" />
+          <h3>Dias da semana</h3>
+          <p>
+            Outro fator é a quantidade de dias efetivos que você irá
+            disponibilizar para trabalhar no projeto. contanto o desenvolvimento
+            e parte comercial.
+          </p>
+          <div class="form">
+            <input
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+              onkeypress="return onlynumber();"
+            />
+
+            <label for="name" class="input-label">
+              <span class="content-label">Dias</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <img src="assets/beach.svg" class="icons" />
+          <h3>Férias estipuladas</h3>
+          <p>
+            Uma parte do valor da sua hora reflete diretamente na quantidade de
+            dias que você deseja tirar "férias" com o valor total projeto.
+          </p>
+          <div class="form">
+            <input
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+              onkeypress="return onlynumber();"
+            />
+
+            <label for="name" class="input-label">
+              <span class="content-label">Dias de férias</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <img src="assets/money.svg" class="icons" />
+          <h3>Total do projeto</h3>
+          <p>
+            O principal fator é o total a ser recebido pelo freela. A partir
+            desse valor, do quanto você desejaria ganhar em cima do trabalho, é
+            feito o calculo maior.
+          </p>
+          <div class="form">
+            <input
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+              onkeypress="return onlynumber();"
+            />
+            <label for="name" class="input-label">
+              <span class="content-label">Valor total</span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <button value="Realizar calculo!" class="button">
+        Realizar o calculo
+      </button>
     </div>
-    <script src="./main.js"></script>
+
+    <h1 id="result"></h1>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
