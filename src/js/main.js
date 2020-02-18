@@ -11,10 +11,14 @@ btnCalculo.onclick = function () {
     var valorHora = (valorProjeto / (diasEfetivos * 4 * horasDiarias)) + ((diasFerias * diasEfetivos * horasDiarias))
     var elementResult = document.querySelector("h1#result");
 
+    if (isNaN(valorHora)){
+        valorHora = 0;
+    }
+
     if (elementResult.firstChild !== null) {
         elementResult.removeChild(elementResult.firstChild);
     }
-    elementResult.appendChild(document.createTextNode("A hora vale: R$" + valorHora ));
+    elementResult.appendChild(document.createTextNode("A hora vale: R$" + valorHora.toFixed(2)));
     elementResult.classList.add("animated", "animatedFadeInUp", "fadeInUp");
 
     window.scrollTo(0, 1000);
